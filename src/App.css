@@ -13,7 +13,8 @@ body {
 }
 
 .add-todo h2 {
-    color: chocolate;
+    color: #ffeb3b;
+    font-weight: lighter;
 }
 
 form {
@@ -25,6 +26,8 @@ form {
     margin: 0 auto !important;
     width: 90% !important;
     border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -32,6 +35,15 @@ li , button{
     color : #fff !important;
 }
 
-input[type="checkbox"] {
-    border-color: #fff !important;
+input {
+    width: 90%;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
 }

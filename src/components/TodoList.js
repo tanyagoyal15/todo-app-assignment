@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import AddTodo from './AddTodo'
 import MyTodos from './MyTodos'
 
+//MUI imports
+import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+
 export class TodoList extends Component {
     constructor(props) {
         super(props);
@@ -51,7 +55,10 @@ export class TodoList extends Component {
             <div>
                 <div className="add-todo">
                     <h2>Todo</h2>
-                    <button onClick={this.handleClick}>Add Todo</button>
+                    <Button variant="contained" color="#282828">
+                        <AddIcon onClick={this.handleClick} />
+                    </Button>
+                    {/* <button onClick={this.handleClick}>Add Todo</button> */}
                 </div>
                 {this.state.addNewTodo ? (<AddTodo onSubmit={this.addTodo}/>) : null }
                 <MyTodos todos={todos}
