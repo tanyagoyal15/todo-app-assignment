@@ -40,7 +40,7 @@ export class Todo extends Component {
                 {
                     this.props.todo.iscompleted ? (
                         <div className="todo-item">
-                            <div onClick={this.props.toggleComplete}>
+                            <div onClick={this.props.toggleComplete} style={{textDecoration : 'line-through'}}>
                                 <Checkbox
                                     defaultChecked
                                     value="uncontrolled"
