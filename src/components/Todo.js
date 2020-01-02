@@ -36,21 +36,41 @@ export class Todo extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div style={{ display: 'flex' }} className="todo-item" >
-                <div style={{
-                    textDecoration: this.props.todo.iscompleted ? "line-through" : ""
-                }} onClick={this.props.toggleComplete}>
-                    <Checkbox
-                        value="uncontrolled"
-                        color="primary"
-                        icon={<span className={classes.icon} />}
-                        checkedIcon={<span className={classes.icon, classes.checkedIcon} />}
-                        inputProps={{ "aria-label": 'uncontrolled-checkbox' }} />
-                    {this.props.todo.text}
-                </div>
-                <IconButton aria-label="delete" onClick={this.props.onDelete}>
-                    <ClearIcon className={classes.deleteIcon} />
-                </IconButton>
+            <div>
+                {
+                    this.props.todo.iscompleted ? (
+                        <div className="todo-item">
+                            <div onClick={this.props.toggleComplete}>
+                                <Checkbox
+                                    defaultChecked
+                                    value="uncontrolled"
+                                    color="primary"
+                                    icon={<span className={classes.icon} />}
+                                    checkedIcon={<span className={classes.icon, classes.checkedIcon} />}
+                                    inputProps={{ "aria-label": 'uncontrolled-checkbox' }} />
+                                {this.props.todo.text}
+                            </div>
+                            <IconButton aria-label="delete" onClick={this.props.onDelete}>
+                                <ClearIcon className={classes.deleteIcon} />
+                            </IconButton>
+                        </div>
+                    ) : (
+                            <div className="todo-item">
+                                <div onClick={this.props.toggleComplete}>
+                                    <Checkbox
+                                        value="uncontrolled"
+                                        color="primary"
+                                        icon={<span className={classes.icon} />}
+                                        checkedIcon={<span className={classes.icon, classes.checkedIcon} />}
+                                        inputProps={{ "aria-label": 'uncontrolled-checkbox' }} />
+                                    {this.props.todo.text}
+                                </div>
+                                <IconButton aria-label="delete" onClick={this.props.onDelete}>
+                                    <ClearIcon className={classes.deleteIcon} />
+                                </IconButton>
+                            </div>
+                        )
+                }
             </div>
         )
     }
