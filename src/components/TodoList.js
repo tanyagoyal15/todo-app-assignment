@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AddTodo from './AddTodo'
-import Todo from './Todo'
+import MyTodos from './MyTodos'
 
 export class TodoList extends Component {
     constructor(props) {
@@ -30,6 +30,7 @@ export class TodoList extends Component {
         this.updateLocalStorage(todos);
     }
 
+
     deleteTodo = id => {
         const newList = this.state.todos.filter(todo => todo.id !== id);
         this.updateTodo(newList);
@@ -53,14 +54,10 @@ export class TodoList extends Component {
                     <button onClick={this.handleClick}>Add Todo</button>
                 </div>
                 {this.state.addNewTodo ? (<AddTodo onSubmit={this.addTodo}/>) : null }
-                {todos.map(todo => {
-                    return <Todo 
-                                key={todo.id} 
-                                toggleComplete={() => this.toggleComplete(todo.id)} 
-                                onDelete={() => this.deleteTodo(todo.id)}
-                                todo={todo} 
-                            />
-                })}
+                <MyTodos todos={todos}
+                    toggleComplete={this.toggleComplete}
+                    deleteTodo={this.deleteTodo}
+                />
             </div>
         )
     }
