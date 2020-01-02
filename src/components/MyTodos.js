@@ -15,6 +15,10 @@ export class MyTodos extends Component {
                             />
                     })
                 }
+                <div className="todos">
+                    <div>Total Todos : {this.props.todos.length}</div>
+                    <div>Todos Yet to be completed : {this.props.todos.filter(todo => !todo.iscompleted).length}</div>
+                </div>
             </div>
         )
     }

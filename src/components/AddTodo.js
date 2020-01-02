@@ -27,7 +27,7 @@ export class AddTodo extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input name="text" value={this.state.text} onChange={this.handleChange} placeholder="Add todo..." />
+                <input type="text" name="text" placeholder="Add todo..." value={this.state.text} onChange={this.handleChange}/>
             </form>
         )
     }

@@ -24,12 +24,19 @@ export class TodoList extends Component {
             todos : [...this.state.todos , todo],
         })   
         localStorage.setItem("Todos", JSON.stringify([...this.state.todos, todo]));
+
+        this.setState({ addNewTodo : false})
     }
 
     toggleComplete = id => {
-        const { todos } = this.state;
+
+        const {todos} = this.state;
         const todoIndex = this.state.todos.findIndex(todo => todo.id === id);
-        todos[todoIndex].iscompleted = true;
+        if (!todos[todoIndex].iscompleted) {
+            todos[todoIndex].iscompleted = true;
+        } else if (todos[todoIndex].iscompleted) {
+            todos[todoIndex].iscompleted = false;
+        }
         this.updateTodo(todos);
         this.updateLocalStorage(todos);
     }
@@ -55,10 +62,9 @@ export class TodoList extends Component {
             <div>
                 <div className="add-todo">
                     <h2>Todo</h2>
-                    <Button variant="contained" color="#282828">
-                        <AddIcon onClick={this.handleClick} />
+                    <Button variant="contained" onClick={this.handleClick} >
+                        <AddIcon color="primary" />
                     </Button>
-                    {/* <button onClick={this.handleClick}>Add Todo</button> */}
                 </div>
                 {this.state.addNewTodo ? (<AddTodo onSubmit={this.addTodo}/>) : null }
                 <MyTodos todos={todos}
