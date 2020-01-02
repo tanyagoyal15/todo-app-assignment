@@ -1,35 +1,39 @@
 body {
-    text-align : center;
     background-color: #000;
     color: #fff !important;
 }
 
-form {
-    text-align: center;
+table {
+    width: 90%;
+    margin: 0 auto !important;
+}
+
+table tr {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
 }
 
 input {
-    width: 90%;
     outline: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid #ccc;
-    background-color: transparent;
-    color: #fff;
-    padding: 10px;
-    font-size: 20px;
+    border: none;
+    /* background-color: transparent; */
+    /* color: #fff; */
+    padding: 5px 10px;
+    font-size: 18px;
 }
 
-li {
-    color : #fff !important;
+button {
+    width: 50px;
+    height: 30px;
+    background-color: #9e9e9e;
+    outline: none;
+    cursor : pointer;
 }
-
 
 .add-todo {
     margin: auto 5%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -37,17 +41,4 @@ li {
 .add-todo h2 {
     color: #ffeb3b;
     font-weight: lighter;
-}
-
-.todo-item {
-    margin: 0 auto !important;
-    width: 90% !important;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.todos {
-    margin-top: 15px;
 }
