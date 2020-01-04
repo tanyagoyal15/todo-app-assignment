@@ -21,7 +21,6 @@ export class TodoList extends Component {
         this.state.todos.push(newTodo);
         this.updateTodo(this.state.todos)
         this.updateLocalStorage(this.state.todos)
-
     }
 
     handleChange = (e) => {
@@ -32,10 +31,7 @@ export class TodoList extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const todos = this.state.todos;
-
-        this.updateTodo(todos);
-        this.updateLocalStorage(todos)        
+        this.addTodo();
     }
 
     deleteTodo(todo) {
