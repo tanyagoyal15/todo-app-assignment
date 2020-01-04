@@ -14,7 +14,7 @@ const AddTodo = (props) => {
                                 {val.showInputField ? (
                                     <div className="mytodo">
                                         <input type="checkbox" id={idx} onClick={(() => props.handleCheckbox(val))} disabled={true} />
-                                        <input type="text" name="todoName" data-id={idx} id={todoName} onChange={props.handleChange} className="form-control input-todo" />
+                                        <input type="text" name="todoName" data-id={idx} id={todoName} onKeyPress={props.handleChange} className="form-control input-todo" autoFocus />
                                     </div>
                                 ) : (
                                     <div className="mytodo">
